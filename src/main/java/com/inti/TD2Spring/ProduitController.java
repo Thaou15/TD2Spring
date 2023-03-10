@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.inti.service.ProduitService;
+import com.inti.TD2Spring.service.ProduitService;
+import com.inti.model.Produit;
 
 @Controller
 @RequestMapping("produit")
@@ -42,10 +43,49 @@ public class ProduitController {
 		return "calculProduit";
 	}
 	
-	@PostMapping("save")
-	public String enregistrerProduit(@ModelAttribute "p" Produit p, Model m)
+	@GetMapping("ajout")
+	public String ajoutProduit()
 	{
-		return "enregistrer";
+		return "enregistrement";
+	}
+	
+	@PostMapping("save")
+	public String enregistrerProduit(@ModelAttribute ("p") Produit p)
+	{
+		 ps.saveProduit(p);
+			
+		return "redirect:/produit/ajout";
+	}
+	
+	@GetMapping("listeP")
+	public String getAllProduit(Model m)
+	{
+	    m.addAttribute("listeE", ps.getProduits());
+	
+	
+	return "listeProduits";
+	
+	}
+	
+	@GetMapping("P")
+	public String getOneProduit(@RequestParam("id") int id, Model m )
+	{
+		
+	   m.addAttribute("p" , ps.getProduit(id));
+	
+	
+	return "produit";
+	
+	}
+	@GetMapping("supprimer")
+	public String deleteProduit(@RequestParam("id") int id, Model m )
+	{
+		
+	   ps.deleteProduit(id);;
+	
+	
+	return "deleteP";
+	
 	}
 
 }

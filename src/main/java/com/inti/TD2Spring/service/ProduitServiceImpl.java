@@ -1,4 +1,4 @@
-package com.inti.service;
+package com.inti.TD2Spring.service;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class ProduitServiceImpl implements ProduitService{
 		{
 			session.beginTransaction();
 			
-		listeProduits = session.createNativeQuery("select * from etudiant", Produit.class).list();
+		listeProduits = session.createNativeQuery("select * from produit", Produit.class).list();
 			
 			session.getTransaction().commit();
 		}

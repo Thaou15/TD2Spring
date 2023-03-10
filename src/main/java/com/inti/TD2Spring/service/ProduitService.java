@@ -1,4 +1,4 @@
-package com.inti.service;
+package com.inti.TD2Spring.service;
 
 import java.util.List;
 
