@@ -2,6 +2,7 @@ package com.inti.TD2Spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,16 @@ public class MagasinController {
 		 ms.saveMagasin(m);;
 			
 		return "redirect:/magasin/ajout";
+	}
+	
+	@GetMapping("listeM")
+	public String getAllProduit(Model m)
+	{
+	    m.addAttribute("listeM", ms.getMagasin());
+	
+	
+	return "listeMagasin";
+	
 	}
 
 }
