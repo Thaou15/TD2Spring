@@ -1,9 +1,15 @@
 package com.inti.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +22,13 @@ public class Produit {
 	private String reference;
 	private String prix;
 	private String poids;
+	
+	@ManyToMany
+	@JoinTable(name="Magasin_Produit",
+    joinColumns = @JoinColumn(name="idP"),
+    inverseJoinColumns = @JoinColumn(name="idM"))
+	private List<Magasin> listeMagasin;
+	
 	public Produit() {
 		super();
 	}

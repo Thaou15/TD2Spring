@@ -27,6 +27,7 @@
 					<th scope="col">Références</th>
 					<th scope="col">Prix</th>
 					<th scope="col">Poids</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,12 +35,15 @@
 				<tr>
 					<th scope="row">${ p.getId() }</th>
 					<td>${ p.getNom() }</td>
-					<td>${ p.getPrenom() }</td>
-					<td>${ p.getTel() }</td>
-					<td>${ p.getMail() }</td>
+					<td>${ p.getReference() }</td>
+					<td>${ p.getPrix() }</td>
+					<td>${ p.getPoids() }</td>
+					<td><a href="supprimer?id=${ p.getId() } " ><button type="button" class="btn btn-outline-danger">Supprimer</button></a></td>
 				</tr>
-				</c:forEach>
+				
+				</c:forEach>		
 			</tbody>
+			
 		</table>
 	
 </body>
