@@ -33,7 +33,7 @@
 			<tbody>
 			<c:forEach var="m" items="${ listeM }">
 				<tr>
-					<th scope="row">${ m.getId() }</th>
+					<th scope="row"><a href="M?id=${ m.getId() }">${ m.getId() }</a></th>
 					<td>${ m.getNom() }</td>
 					<td>${ m.getAdresse() }</td>
 					<td>${ m.getCp() }</td>

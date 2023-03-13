@@ -33,7 +33,7 @@
 			<tbody>
 			<c:forEach var="p" items="${ listeP }">
 				<tr>
-					<th scope="row">${ p.getId() }</th>
+					<th scope="row"><a href="P?id=${ p.getId() }">>${ p.getId() }</th></a>
 					<td>${ p.getNom() }</td>
 					<td>${ p.getReference() }</td>
 					<td>${ p.getPrix() }</td>

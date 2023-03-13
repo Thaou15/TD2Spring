@@ -68,11 +68,11 @@ public class ProduitController {
 	
 	}
 	
-	@GetMapping("P")
-	public String getOneProduit(@RequestParam("id") int id, Model m )
+	@GetMapping("P/{id}")
+	public String getOneProduit(@PathVariable int id, Model m )
 	{
 		
-	   m.addAttribute("p" , ps.getProduit(id));
+	   ps.getProduit(id);
 	
 	
 	return "produit";
