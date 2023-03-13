@@ -13,5 +13,6 @@ public interface MagasinService {
 	public void saveMagasin(Magasin p);
 	public Magasin getMagasin(int id);
 	public void deleteMagasin(int id);
+	public Magasin updateMagasin(Magasin m);
 
 }

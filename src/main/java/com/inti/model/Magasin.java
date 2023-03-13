@@ -69,6 +69,12 @@ public class Magasin {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
+	public List<Produit> getListeProduit() {
+		return listeProduit;
+	}
+	public void setListeProduit(List<Produit> listeProduit) {
+		this.listeProduit = listeProduit;
+	}
 	@Override
 	public String toString() {
 		return "Magasin [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", cp=" + cp + ", ville=" + ville + "]";

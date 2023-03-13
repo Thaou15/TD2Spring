@@ -65,5 +65,6 @@ public class MagasinController {
 	return "redirect:/magasin/listeM";
 	
 	}
+	
 
 }

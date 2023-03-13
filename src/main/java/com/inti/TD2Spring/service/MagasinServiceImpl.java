@@ -84,4 +84,21 @@ public class MagasinServiceImpl implements MagasinService {
 		
 	}
 
+	@Override
+	public Magasin updateMagasin(Magasin m) {
+		try
+		{
+			session.beginTransaction();
+			
+			session.update(m);;
+			
+			session.getTransaction().commit();
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		return m;
+	}
+
 }

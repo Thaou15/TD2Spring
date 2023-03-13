@@ -69,6 +69,12 @@ public class Produit {
 	public void setPoids(String poids) {
 		this.poids = poids;
 	}
+	public List<Magasin> getListeMagasin() {
+		return listeMagasin;
+	}
+	public void setListeMagasin(List<Magasin> listeMagasin) {
+		this.listeMagasin = listeMagasin;
+	}
 	@Override
 	public String toString() {
 		return "Produit [id=" + id + ", nom=" + nom + ", reference=" + reference + ", prix=" + prix + ", poids=" + poids
