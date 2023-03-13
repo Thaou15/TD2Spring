@@ -100,5 +100,7 @@ public class MagasinServiceImpl implements MagasinService {
 		}
 		return m;
 	}
+	
+	
 
 }

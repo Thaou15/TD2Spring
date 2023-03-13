@@ -54,6 +54,11 @@ public class AdminController {
 		}
 		
 		for (Magasin magasin : listeMagasin) {
+			// on recupère les anciens produits qu'on ajoute au nouveau, sinon ils sont supprimés
+			for(Produit p : magasin.getListeProduit()) {
+				listeProduit.add(p);		
+			}
+			
 			magasin.setListeProduit(listeProduit);
 			ms.updateMagasin(magasin);
 			
